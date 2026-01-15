@@ -1,68 +1,196 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+/* --- CSS VARIABLES (Theme Definitions) --- */
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Font Families */
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-logo: 'Outfit', sans-serif;
+
+    /* Custom Color Palette: Muted Luxury */
+    
+    /* Primary (Muted Gold) */
+    --primary-50: #fbf8ef;
+    --primary-100: #f5edd6;
+    --primary-200: #ead8ad;
+    --primary-300: #dec080;
+    --primary-400: #d1ac5e;
+    --primary-500: #C7A14A;
+    --primary-600: #b58d3b;
+    --primary-700: #967030;
+    --primary-800: #7d5b2c;
+    --primary-900: #684a29;
+    --primary-950: #3a2712;
+
+    /* Secondary (Warm Brown) */
+    --secondary-50: #fbf6f3;
+    --secondary-100: #f5ebe5;
+    --secondary-200: #ead5ca;
+    --secondary-300: #dcbba9;
+    --secondary-400: #c89d83;
+    --secondary-500: #8B5E3C;
+    --secondary-600: #9f7055;
+    --secondary-700: #845a43;
+    --secondary-800: #6e4b3a;
+    --secondary-900: #5a3e32;
+    --secondary-950: #32211a;
+
+    /* Slate Overrides (Warm Grays) */
+    --slate-50: #FAFAF8;
+    --slate-100: #f5f5f4;
+    --slate-200: #e7e5e4;
+    --slate-300: #d6d3d1;
+    --slate-400: #a8a29e;
+    --slate-500: #7A7A7A;
+    --slate-600: #57534e;
+    --slate-700: #44403c;
+    --slate-800: #292524;
+    --slate-900: #1A1A1A;
+    --slate-950: #0c0a09;
+
+    /* Dark Mode Specifics */
+    --dark-bg: #121210;
+    --dark-surface: #1C1917;
+    --dark-border: #292524;
   }
-  a:hover {
-    color: #747bff;
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--slate-50);
+    color: var(--slate-900);
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .dark body {
+    background-color: var(--dark-bg);
+    color: #f5f5f4;
+  }
+}
+
+/* --- CUSTOM UTILITIES --- */
+@layer utilities {
+  
+  /* Fonts */
+  .font-sans { font-family: var(--font-sans); }
+  .font-logo { font-family: var(--font-logo); }
+
+  /* --- PRIMARY COLORS --- */
+  .bg-primary-50 { background-color: var(--primary-50); }
+  .bg-primary-100 { background-color: var(--primary-100); }
+  .bg-primary-500 { background-color: var(--primary-500); }
+  .bg-primary-600 { background-color: var(--primary-600); }
+  
+  .text-primary-400 { color: var(--primary-400); }
+  .text-primary-500 { color: var(--primary-500); }
+  .text-primary-600 { color: var(--primary-600); }
+  .text-primary-700 { color: var(--primary-700); }
+  
+  .border-primary-100 { border-color: var(--primary-100); }
+  .border-primary-200 { border-color: var(--primary-200); }
+  .border-primary-500 { border-color: var(--primary-500); }
+
+  .ring-primary-500 { --tw-ring-color: var(--primary-500); }
+
+  /* Hover States (Primary) */
+  .hover\:bg-primary-50:hover { background-color: var(--primary-50); }
+  .hover\:bg-primary-600:hover { background-color: var(--primary-600); }
+  .hover\:bg-primary-700:hover { background-color: var(--primary-700); }
+  .hover\:text-primary-600:hover { color: var(--primary-600); }
+  .hover\:border-primary-300:hover { border-color: var(--primary-300); }
+
+  /* Dark Mode (Primary) */
+  .dark .dark\:bg-primary-500 { background-color: var(--primary-500); }
+  .dark .dark\:bg-primary-900\/20 { background-color: rgba(104, 74, 41, 0.2); }
+  .dark .dark\:text-primary-300 { color: var(--primary-300); }
+  .dark .dark\:text-primary-400 { color: var(--primary-400); }
+  .dark .dark\:border-primary-500 { border-color: var(--primary-500); }
+  .dark .dark\:border-primary-700 { border-color: var(--primary-700); }
+  .dark .dark\:border-primary-800 { border-color: var(--primary-800); }
+  
+  /* --- SLATE COLORS (Warm Gray Overrides) --- */
+  .bg-slate-50 { background-color: var(--slate-50); }
+  .bg-slate-100 { background-color: var(--slate-100); }
+  
+  .text-slate-400 { color: var(--slate-400); }
+  .text-slate-500 { color: var(--slate-500); }
+  .text-slate-600 { color: var(--slate-600); }
+  .text-slate-800 { color: var(--slate-800); }
+  .text-slate-900 { color: var(--slate-900); }
+  
+  .border-slate-100 { border-color: var(--slate-100); }
+  .border-slate-200 { border-color: var(--slate-200); }
+  .border-slate-300 { border-color: var(--slate-300); }
+
+  /* Hover States (Slate) */
+  .hover\:bg-slate-50:hover { background-color: var(--slate-50); }
+  .hover\:bg-slate-100:hover { background-color: var(--slate-100); }
+  .hover\:bg-slate-200:hover { background-color: var(--slate-200); }
+  .hover\:text-slate-600:hover { color: var(--slate-600); }
+  .hover\:text-slate-800:hover { color: var(--slate-800); }
+  .hover\:text-slate-900:hover { color: var(--slate-900); }
+
+  /* Dark Mode (Slate/Dark Custom) */
+  .dark .dark\:bg-slate-700 { background-color: var(--slate-700); }
+  .dark .dark\:bg-slate-800 { background-color: var(--slate-800); }
+  .dark .dark\:bg-slate-900 { background-color: var(--slate-900); }
+  
+  .dark .dark\:text-slate-200 { color: var(--slate-200); }
+  .dark .dark\:text-slate-300 { color: var(--slate-300); }
+  .dark .dark\:text-slate-400 { color: var(--slate-400); }
+  
+  .dark .dark\:border-slate-600 { border-color: var(--slate-600); }
+  .dark .dark\:border-slate-700 { border-color: var(--slate-700); }
+  .dark .dark\:border-slate-800 { border-color: var(--slate-800); }
+
+  /* --- CUSTOM DARK THEME UTILITIES --- */
+  .dark .dark\:bg-dark-bg { background-color: var(--dark-bg); }
+  .dark .dark\:bg-dark-surface { background-color: var(--dark-surface); }
+  .dark .dark\:border-dark-border { border-color: var(--dark-border); }
+  .dark .dark\:border-white\/5 { border-color: rgba(255, 255, 255, 0.05); }
+  .dark .dark\:bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
+  .dark .dark\:bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
+  .dark .dark\:hover\:bg-white\/5:hover { background-color: rgba(255, 255, 255, 0.05); }
+
+  /* --- ANIMATIONS --- */
+  .animate-fade-in { animation: fade-in 0.3s ease-out; }
+  .animate-slide-in { animation: slide-in 0.3s ease-out; }
+  
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes slide-in {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* --- SHADOWS --- */
+  .shadow-soft { box-shadow: 0 4px 20px -2px rgba(26, 26, 26, 0.05); }
+  .shadow-glow { box-shadow: 0 0 20px rgba(199, 161, 74, 0.15); }
+
+  /* --- CUSTOM SCROLLBAR --- */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--slate-300);
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--slate-400);
+  }
+  
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--slate-700);
   }
 }
