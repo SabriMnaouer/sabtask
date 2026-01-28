@@ -67,7 +67,7 @@ SabTask uses **Vite** as the development and build tool for fast, optimized buil
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/sabbrimnaouer/sabtask.git
+    git clone https://github.com/SabriMnaouer/sabtask.git
     ```
 2. **Install dependencies**:
     ```bash
