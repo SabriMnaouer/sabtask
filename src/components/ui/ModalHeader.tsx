@@ -1,0 +1,20 @@
+
+import React from 'react';
+import { X } from 'lucide-react';
+import { ModalHeaderProps } from '../../types';
+
+export const ModalHeader: React.FC<ModalHeaderProps> = ({ title, subtitle, onClose }) => {
+    return (
+        <div className="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+            <div>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                    {title}
+                </h2>
+                {subtitle && <p className="text-sm text-slate-500">{subtitle}</p>}
+            </div>
+            <button onClick={onClose} className="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full text-slate-400 hover:text-slate-600 transition-colors">
+                <X size={20} />
+            </button>
+        </div>
+    );
+};
