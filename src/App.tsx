@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Sidebar } from './components/layout/Sidebar';
 import { Header } from './components/layout/Header';
 import { NotificationsPanel } from './components/NotificationsPanel';
@@ -7,6 +6,8 @@ import { LoginScreen } from './components/auth/LoginScreen';
 import { ViewManager } from './components/views/ViewManager';
 import { ModalManager } from './components/modals/ModalManager';
 import { AppProvider, useApp } from './context/AppContext';
+import { ToastContainer } from './components/ui/Toast';
+import { ErrorBoundary } from './components/ui/ErrorBoundary';
 
 const AppLayout = () => {
   const { state, actions } = useApp();
@@ -38,12 +39,15 @@ const AppLayout = () => {
           )}
 
           <div className={`mx-auto ${isFixedView ? 'h-full w-full' : '' /* Removed max-w constraint for Kanban/Projects to use full width if needed */}`}>
-            <ViewManager />
+            <ErrorBoundary>
+              <ViewManager />
+            </ErrorBoundary>
           </div>
         </div>
       </main>
 
       <ModalManager />
+      <ToastContainer toasts={state.toasts} removeToast={actions.removeToast} />
     </div>
   );
 };
