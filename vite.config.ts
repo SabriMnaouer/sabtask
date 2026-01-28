@@ -10,6 +10,8 @@ export default defineConfig(({ mode }) => {
   plugins: [tailwindcss(),
   react()],
   define: {
+// Gemini API
+      'process.env.API_KEY': JSON.stringify(env.API_KEY),
 // Supabase
       'process.env.SUPABASE_URL': JSON.stringify(env.SUPABASE_URL),
       'process.env.SUPABASE_ANON_KEY': JSON.stringify(env.SUPABASE_ANON_KEY),  
