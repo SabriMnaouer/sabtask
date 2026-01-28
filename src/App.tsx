@@ -1,12 +1,14 @@
+import { Header } from "./components/layout/Header"
+import { Sidebar } from "./components/layout/Sidebar"
 
 function App() {
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background text-slate-900 font-sans">
-      <div className="text-center">
-        <h1 className="text-4xl font-logo font-bold text-primary-600 mb-2">SabTask</h1>
-        <p className="text-slate-500">System Initializing...</p>
-      </div>
+    <div className="flex h-screen bg-background dark:bg-dark-bg overflow-hidden text-slate-900 dark:text-slate-100 selection:bg-primary-500/30">
+      <Sidebar />
+      <main className="flex-1 flex flex-col h-full overflow-hidden relative">
+        <Header />
+      </main>
     </div>)
 }
 
