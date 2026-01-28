@@ -1,7 +1,8 @@
 
 # SabTask - AI Powered Work Management Platform
 
-![React](https://img.shields.io/badge/React-19.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![Supabase](https://img.shields.io/badge/Supabase-Database-green) ![Gemini](https://img.shields.io/badge/AI-Google%20Gemini-orange)
+![React](https://img.shields.io/badge/React-19.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![Vite](https://img.shields.io/badge/Vite-4.6-purple) ![Supabase](https://img.shields.io/badge/Supabase-Database-green) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-blue) ![Gemini](https://img.shields.io/badge/AI-Google%20Gemini-orange)
+
 
 SabTask is a production-ready, fullstack work management system designed for modern teams. Built with **React 19**, it leverages **Google Gemini** for AI assistance and **Supabase** for real-time data persistence. It features a beautiful, glassmorphic UI that is fully responsive and supports both dark and light modes.
 
