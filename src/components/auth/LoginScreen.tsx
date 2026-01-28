@@ -6,16 +6,16 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
   return (
     <div className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden">
       {/* Background Image with Animation */}
-      <div 
-          className="absolute inset-0 z-0"
-          style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              animation: 'ken-burns 30s ease-in-out infinite alternate'
-          }}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2670&auto=format&fit=crop")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          animation: 'ken-burns 30s ease-in-out infinite alternate'
+        }}
       />
-      
+
       {/* Overlay for better contrast/focus */}
       <div className="absolute inset-0 z-0 bg-white/20 dark:bg-black/50 backdrop-blur-sm" />
 
@@ -32,8 +32,8 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
           <div className="w-12 h-12 bg-white rounded-xl opacity-20 rotate-45"></div>
         </div>
         <h1 className="text-4xl font-logo font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">SabTask</h1>
-        <p className="text-slate-500 dark:text-slate-400 mb-10 font-medium text-lg">Manage projects with<br/>AI-powered precision.</p>
-        <button 
+        <p className="text-slate-500 dark:text-slate-400 mb-10 font-medium text-lg">Manage projects with<br />AI-powered precision.</p>
+        <button
           onClick={onLogin}
           className="w-full bg-gradient-to-r from-black to-slate-400 hover:from-neutral-900 hover:to-slate-300 text-white py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-slate-500/30 active:scale-95 text-lg"
         >

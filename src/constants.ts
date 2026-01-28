@@ -4,11 +4,11 @@ import { User, NavItemConfig, TaskStatus, Task, Priority, Channel, ChatMessage }
 // --- INITIAL USER (For Auth Simulation) ---
 export const CURRENT_USER: User = {
   id: 'u1',
-  name: 'Sab Dev',
-  avatar: './assets/s.svg',
+  name: 'Sabri Dev',
+  avatar: 'https://picsum.photos/seed/sabri/100/100',
   role: 'ADMIN',
   jobRole: 'Product Owner',
-  email: 'sabmn@sabtask.com'
+  email: 'sabrimn@sabtask.com'
 };
 
 // --- UI CONFIGURATION ---
@@ -28,49 +28,48 @@ export const KANBAN_COLUMNS = [
   { 
       id: TaskStatus.TODO, 
       title: 'To Do', 
-      // Paper style: White bg, specific border colors for status
-      bg: 'bg-white dark:bg-stone-900',
-      headerBorder: 'border-slate-200 dark:border-stone-700',
+      bg: 'bg-white dark:bg-dark-surface',
+      headerBorder: 'border-slate-200 dark:border-slate-800',
       dotColor: 'bg-slate-400'
   },
   { 
       id: TaskStatus.IN_PROGRESS, 
       title: 'In Progress', 
-      bg: 'bg-white dark:bg-stone-900',
+      bg: 'bg-white dark:bg-dark-surface',
       headerBorder: 'border-primary-200 dark:border-primary-800',
-      dotColor: 'bg-primary-500' // Gold
+      dotColor: 'bg-primary-500' // Pink
   },
   { 
       id: TaskStatus.REVIEW, 
       title: 'Review', 
-      bg: 'bg-white dark:bg-stone-900',
-      headerBorder: 'border-secondary-200 dark:border-secondary-800',
-      dotColor: 'bg-secondary-500' // Brown
+      bg: 'bg-white dark:bg-dark-surface',
+      headerBorder: 'border-slate-800 dark:border-slate-200', // Black (Dark Grey) in Light Mode
+      dotColor: 'bg-slate-900 dark:bg-slate-100' // Black
   },
   { 
       id: TaskStatus.DONE, 
       title: 'Done', 
-      bg: 'bg-white dark:bg-stone-900',
-      headerBorder: 'border-emerald-200 dark:border-emerald-800',
-      dotColor: 'bg-emerald-600' // Deep Green (Olive-ish)
+      bg: 'bg-white dark:bg-dark-surface',
+      headerBorder: 'border-secondary-200 dark:border-secondary-800',
+      dotColor: 'bg-secondary-500' // Green
   },
 ];
 
-// Earthy, Premium Chart Colors
+// Colors Pink/Green/Black/White theme
 export const CHART_COLORS = {
-  purple: '#C7A14A', // Primary Gold
-  pink: '#8B5E3C',   // Secondary Brown
-  orange: '#D97706', // Amber/Orange
-  blue: '#475569',   // Slate Blue 
-  teal: '#57534E',   // Warm Stone
-  slate: '#A8A29E'   // Light Stone
+  purple: '#EC4899', // Pink
+  pink: '#10B981',   // Green
+  orange: '#111827', // Black (Dark Grey)
+  blue: '#6B7280',   // Grey
+  teal: '#374151',   // Dark Grey
+  slate: '#E5E7EB'   // Light Grey
 };
 
 export const STATUS_COLORS = {
-  [TaskStatus.TODO]: '#7A7A7A',        // Muted Gray
-  [TaskStatus.IN_PROGRESS]: '#C7A14A', // Gold
-  [TaskStatus.REVIEW]: '#8B5E3C',      // Brown
-  [TaskStatus.DONE]: '#059669',        // Emerald/Olive Green
+  [TaskStatus.TODO]: '#9CA3AF',        // Grey
+  [TaskStatus.IN_PROGRESS]: '#EC4899', // Pink
+  [TaskStatus.REVIEW]: '#111827',      // Black
+  [TaskStatus.DONE]: '#10B981',        // Green
 };
 
 export const DASHBOARD_TREND_DATA = [
